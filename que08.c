@@ -1,29 +1,32 @@
-//program to check number is strong or not
+// Write a program to find greatest of three numbers using nested if-else.
 
+void greaterNum();
 #include<stdio.h>
-void main() {
-    int num;
-    printf("enter a number:");
-    scanf("%d", &num);
-    int temp = num;
-    int rem, fact, i, sum=0;
-    while(num>0){
-        rem = num%10;
-        fact = 1;
-        i = 1;
+void main(){
+    printf("start\n");
+    greaterNum();
+    printf("end");
+}
 
-        while(i<=rem){
-            fact = i*fact;
-            i++;
+void greaterNum() {
+    int a,b,c;
+    printf("enter the three numbers:");
+    scanf("%d%d%d", &a, &b, &c);
+
+    if(a > b) {
+        if (a > c) {
+            printf("a is greater.");
         }
-        sum = sum + fact;
-        num = num/10;
-    }
-    printf("\nsum of factorials of the number = %d", sum);
-    if(sum==temp){
-        printf("\nnumber is a strong number.");
+        else {
+            printf(" c is greater");
+        }
     }
     else {
-        printf("\nnumber is not strong number.");
+        if(b > c) {
+            printf("b is greater");
+        }
+        else {
+            printf("c is greater");
+        }
     }
 }
